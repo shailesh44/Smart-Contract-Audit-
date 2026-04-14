@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/erc20.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> erc20.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>48/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>56/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>47/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">35×</span>
+<span class="cline-any cline-yes">32×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">25×</span>
+<span class="cline-any cline-yes">22×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">93×</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-yes">77×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">88×</span>
+<span class="cline-any cline-yes">87×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">79×</span>
+<span class="cline-any cline-yes">76×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.27;
+&nbsp;
+import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
+import {ERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {ERC20Pausable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Pausable.sol";
+import {ERC20Permit} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol";
+import {ERC20Burnable} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
+&nbsp;
+// Interface to read reserve data from the governance oracle contract
+interface IReserveOracle {
+    function getCurrentReserve() external view returns (uint256);
+    function lastUpdatedAt() external view returns (uint256);
+}
+&nbsp;
+contract Vittagems is ERC20, ERC20Pausable, ERC20Burnable, AccessControl, ERC20Permit {
+&nbsp;
+    bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+&nbsp;
+    // Hard cap: 10 billion tokens with 18 decimals
+    uint256 public constant MAX_SUPPLY = 10_000_000_000 * (10 ** 18);
+&nbsp;
+    // Oracle reference set post-deployment via setReserveOracle(), then permanently locked
+    IReserveOracle public reserveOracle;
+    bool public reserveOracleLocked;
+&nbsp;
+    // Maximum allowed age (in seconds) of reserve data before minting is blocked; 0 disables the check
+    uint256 public reserveStalenessThreshold;
+&nbsp;
+    event ReserveOracleSet(address indexed oracleAddress);
+    event ReserveOracleLocked(address indexed oracleAddress);
+    event StalenessThresholdUpdated(uint256 oldThreshold, uint256 newThreshold);
+    event MintWithReserveCheck(
+        address indexed to,
+        uint256 amount,
+        uint256 newTotalSupply,
+        uint256 reserveValue
+    );
+&nbsp;
+    error InvalidAddress(string param);
+    error MaxSupplyExceeded(uint256 requested, uint256 available);
+    error ReserveInsufficient(uint256 requestedTotal, uint256 reserveValue);
+    error ReserveDataStale(uint256 lastUpdated, uint256 threshold);
+    error ReserveOracleNotSet();
+    error OracleAlreadyLocked();
+&nbsp;
+    /// @param defaultAdmin Address receiving DEFAULT_ADMIN_ROLE
+    /// @param pauser Address receiving PAUSER_ROLE
+    /// @param minter Address receiving MINTER_ROLE
+    /// @param _stalenessThreshold Seconds before reserve data is considered stale; 0 to disable
+    constructor(
+        address defaultAdmin,
+        address pauser,
+        address minter,
+        uint256 _stalenessThreshold
+    )
+        ERC20("Vittagems", "VGMG")
+        ERC20Permit("Vittagems")
+    {
+        if (defaultAdmin == address(0)) revert InvalidAddress("defaultAdmin");
+        if (pauser == address(0)) revert InvalidAddress("pauser");
+        if (minter == address(0)) revert InvalidAddress("minter");
+&nbsp;
+        _grantRole(DEFAULT_ADMIN_ROLE, defaultAdmin);
+        _grantRole(PAUSER_ROLE, pauser);
+        _grantRole(MINTER_ROLE, minter);
+&nbsp;
+        reserveStalenessThreshold = _stalenessThreshold;
+    }
+&nbsp;
+    /// @notice Assigns the reserve oracle address; callable multiple times until locked
+    /// @dev Deployment flow: deploy Vittagems â deploy DOVGovernance â call this â call lockReserveOracle()
+    /// @param _oracle Address of the deployed DOVGovernance contract
+    function setReserveOracle(address _oracle) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        if (reserveOracleLocked) revert OracleAlreadyLocked();
+        if (_oracle == address(0)) revert InvalidAddress("oracle");
+&nbsp;
+        reserveOracle = IReserveOracle(_oracle);
+        emit ReserveOracleSet(_oracle);
+    }
+&nbsp;
+    /// @notice Permanently locks the oracle address so it can never be changed again
+    function lockReserveOracle() external onlyRole(DEFAULT_ADMIN_ROLE) {
+        if (address(reserveOracle) == address(0)) revert ReserveOracleNotSet();
+        if (reserveOracleLocked) revert OracleAlreadyLocked();
+&nbsp;
+        reserveOracleLocked = true;
+        emit ReserveOracleLocked(address(reserveOracle));
+    }
+&nbsp;
+    /// @notice Returns the current reserve value from the oracle, or 0 if oracle is not set
+    function getReserveValue() public view returns (uint256) {
+        if (address(reserveOracle) == address(0)) return 0;
+        return reserveOracle.getCurrentReserve();
+    }
+&nbsp;
+    /// @notice Returns the timestamp of the last reserve update from the oracle
+    function getReserveLastUpdated() public view returns (uint256) {
+        if (address(reserveOracle) == address(0)) return 0;
+        return reserveOracle.lastUpdatedAt();
+    }
+&nbsp;
+    /// @notice Checks whether the reserve data is within the staleness threshold
+    /// @return true if data is fresh or staleness check is disabled, false otherwise
+    function isReserveFresh() public view returns (bool) {
+        // Staleness check disabled when threshold is 0
+        if (reserveStalenessThreshold == 0) return true;
+        if (address(reserveOracle) == address(0)) return false;
+&nbsp;
+        uint256 lastUpdated = reserveOracle.lastUpdatedAt();
+        if (lastUpdated == 0) return false;
+&nbsp;
+        return (block.timestamp - lastUpdated) &lt;= reserveStalenessThreshold;
+    }
+&nbsp;
+    /// @notice Calculates how many tokens can still be minted given reserve and max supply limits
+    /// @return The lower of reserve-based capacity and max-supply-based capacity, or 0 if data is stale
+    function mintableAmount() external view returns (uint256) {
+        if (!isReserveFresh()) return 0;
+&nbsp;
+        uint256 reserve = getReserveValue();
+        uint256 supply = totalSupply();
+&nbsp;
+        // Tokens allowed by reserve backing
+        uint256 reserveCap = reserve &gt; supply ? reserve - supply : 0;
+        // Tokens allowed before hitting hard cap
+        uint256 maxCap = MAX_SUPPLY &gt; supply ? MAX_SUPPLY - supply : 0;
+&nbsp;
+        return reserveCap &lt; maxCap ? reserveCap : maxCap;
+    }
+&nbsp;
+    /// @notice Mints tokens after verifying hard cap, staleness, and reserve backing
+    /// @param to Recipient address
+    /// @param amount Number of tokens to mint (18 decimals)
+    function mint(address to, uint256 amount) public onlyRole(MINTER_ROLE) {
+        if (address(reserveOracle) == address(0)) revert ReserveOracleNotSet();
+&nbsp;
+        uint256 newTotal = totalSupply() + amount;
+&nbsp;
+        // Enforce absolute hard cap
+        if (newTotal &gt; MAX_SUPPLY) revert MaxSupplyExceeded(newTotal, MAX_SUPPLY);
+&nbsp;
+        // Enforce staleness check when threshold is configured
+        if (reserveStalenessThreshold &gt; 0) {
+            uint256 lastUpdated = reserveOracle.lastUpdatedAt();
+            if (lastUpdated == 0 || (block.timestamp - lastUpdated) &gt; reserveStalenessThreshold)
+                revert ReserveDataStale(lastUpdated, reserveStalenessThreshold);
+        }
+&nbsp;
+        // Enforce 1:1 reserve backing â total supply must never exceed reserve value
+        uint256 reserveValue = reserveOracle.getCurrentReserve();
+        if (newTotal &gt; reserveValue) revert ReserveInsufficient(newTotal, reserveValue);
+&nbsp;
+        _mint(to, amount);
+        emit MintWithReserveCheck(to, amount, newTotal, reserveValue);
+    }
+&nbsp;
+    /// @notice Pauses all token transfers, minting, and burning
+    function pause() public onlyRole(PAUSER_ROLE) {
+        _pause();
+    }
+&nbsp;
+    /// @notice Resumes all token operations after a pause
+    function unpause() public onlyRole(PAUSER_ROLE) {
+        _unpause();
+    }
+&nbsp;
+    /// @notice Updates how long reserve data can age before minting is blocked
+    /// @param _newThreshold New staleness threshold in seconds; 0 disables the check
+    function setStalenessThreshold(uint256 _newThreshold) external onlyRole(DEFAULT_ADMIN_ROLE) {
+        uint256 old = reserveStalenessThreshold;
+        reserveStalenessThreshold = _newThreshold;
+        emit StalenessThresholdUpdated(old, _newThreshold);
+    }
+&nbsp;
+    /// @dev Required override to integrate ERC20Pausable with base ERC20 transfer hook
+    function _update(address from, address to, uint256 value)
+        internal
+        override(ERC20, ERC20Pausable)
+    {
+        super._update(from, to, value);
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 14 2026 09:59:38 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

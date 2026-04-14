@@ -1,0 +1,37 @@
+{
+  "name": "vittagems",
+  "version": "1.0.0",
+  "scripts": {
+    "compile":            "hardhat compile",
+    "clean":              "hardhat clean",
+
+    "test":               "hardhat test",
+    "test:erc20":         "hardhat test test/erc20/**/*.test.js --grep ''",
+    "test:presale":       "hardhat test test/presale/**/*.test.js --grep ''",
+
+    "test:erc20:main":    "hardhat test test/erc20/Vittagems.test.js",
+    "test:erc20:security":"hardhat test test/erc20/Vittagems.security.test.js",
+    "test:presale:main":  "hardhat test test/presale/VittagemsPresale.test.js",
+    "test:presale:security":"hardhat test test/presale/VittagemsPresale.security.test.js",
+
+    "coverage":           "hardhat coverage",
+    "coverage:erc20":     "COVERAGE_FILES=erc20 hardhat coverage",
+    "coverage:presale":   "COVERAGE_FILES=presale hardhat coverage",
+
+    "gas":                "REPORT_GAS=true hardhat test",
+    "gas:erc20":          "REPORT_GAS=true hardhat test test/erc20/**/*.test.js",
+    "gas:presale":        "REPORT_GAS=true hardhat test test/presale/**/*.test.js"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "hardhat": "^2.22.17",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.14",
+    "chai": "^4.5.0",
+    "ethers": "^6.13.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0"
+  }
+}
